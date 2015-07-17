@@ -1,7 +1,4 @@
-![alt text][logo]
-# ArkData - ARK Dedicated Server data reader
-
-
+#![Logo](http://web.mxcontent.network/arkdata/ArkData.png) ArkData - ARK Data Reader#
 
 The core mechanics are based on <a href="http://steamcommunity.com/app/346110/discussions/0/594821545173979380/">Player & Tribe Viewer</a> made by <a href="http://steamcommunity.com/id/cssjunky">[xU] .$pIrit</a>
 we wanted to make the mechanics more easily implementable into other components.
@@ -63,6 +60,3 @@ The sources of all the dependencies are available and no unsupported features ar
 
 - <a href="https://github.com/JamesNK/Newtonsoft.Json">NewtonSoft.Json</a>
 - <a href="https://code.google.com/p/ssqlib/">SSQ Lib</a>
-
-
-[logo]: http://web.mxcontent.network/arkdata/ArkData.png "ArkData Logo"
