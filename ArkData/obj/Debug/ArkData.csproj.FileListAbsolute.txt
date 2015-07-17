@@ -6,3 +6,5 @@ C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Debug\Newtonsoft.Json.xm
 C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Debug\ArkData.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Debug\ArkData.dll
 C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Debug\ArkData.pdb
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Debug\SSQLib.pdb
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Debug\SSQLib.xml

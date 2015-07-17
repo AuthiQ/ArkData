@@ -13,8 +13,8 @@ namespace ArkData
     {
         /// <summary>
         /// Loads the profile data for all users from the steam service
-        /// <param name="apiKey">The Steam API key.</param>
         /// </summary>
+        /// <param name="apiKey">The Steam API key</param>
         public void LoadSteam(string apiKey)
         {
             var builder = new StringBuilder();
@@ -78,7 +78,11 @@ namespace ArkData
 
                 if (online.Count > 0)
                     for (var i = 0; i < online.Count; i++)
-                        Players.Single(p => p.SteamName == online[i].Name).Online = true;
+                    {
+                        var online_player = Players.SingleOrDefault(p => p.SteamName == online[i].Name);
+                        if (online_player != null)
+                            online_player.Online = true;
+                    }
             }
             else
                 throw new System.Exception("The Steam user data should be loaded before the server status can be checked.");
@@ -111,13 +115,13 @@ namespace ArkData
             {
                 var player = container.Players[i];
                 player.OwnedTribes = container.Tribes.Where(t => t.OwnerId == player.Id).ToList();
-                player.Tribe = container.Tribes.Single(t => t.Id == player.TribeId);
+                player.Tribe = container.Tribes.SingleOrDefault(t => t.Id == player.TribeId);
             }
 
             for (var i = 0; i < container.Tribes.Count; i++)
             {
                 var tribe = container.Tribes[i];
-                tribe.Owner = container.Players.Single(p => p.Id == tribe.OwnerId);
+                tribe.Owner = container.Players.SingleOrDefault(p => p.Id == tribe.OwnerId);
                 tribe.Players = container.Players.Where(p => p.TribeId == tribe.Id).ToList();
             }
 
