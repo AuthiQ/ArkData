@@ -27,10 +27,10 @@ txtSteamName.text = container.Players[0].SteamName;
 txtProfileURL.text = container.Players[0].ProfileUrl;
 ```
 
-Last but not least we have the functionality to check who of the players is online. To use this function you need to have load the users Steam data. This is necessary to bind the online users to their server profiles.
+Last but not least we have the functionality to check who of the players is online. To use this function you need to have loaded the users Steam data. This is necessary to bind the online users to their server profiles.
 
 ```C#
-container.LoadOnlinePlayers("127.0.0.1", 7777);
+container.LoadOnlinePlayers("127.0.0.1", 27015);
 
 txtOnline.text = container.Players[0].Online;
 ```
@@ -50,7 +50,7 @@ await container.LoadSteamAsync("API Key");
 txtSteamName.text = container.Players[0].SteamName;
 txtProfileURL.text = container.Players[0].ProfileUrl;
 
-await container.LoadOnlinePlayersAsync("127.0.0.1", 7777);
+await container.LoadOnlinePlayersAsync("127.0.0.1", 27015);
 
 txtOnline.text = container.Players[0].Online;
 ```
