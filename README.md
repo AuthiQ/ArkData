@@ -2,7 +2,7 @@
 
 
 
-The core mechanics are based on <a href="http://steamcommunity.com/app/346110/discussions/0/594821545173979380/#p2">Player & Tribe Viewer</a> made by <a href="http://steamcommunity.com/id/cssjunky">[xU] .$pIrit</a>
+The core mechanics are based on <a href="http://steamcommunity.com/app/346110/discussions/0/594821545173979380/">Player & Tribe Viewer</a> made by <a href="http://steamcommunity.com/id/cssjunky">[xU] .$pIrit</a>
 we wanted to make the mechanics more easily implementable into other components.
 
 <h3>How to use it</h3>
