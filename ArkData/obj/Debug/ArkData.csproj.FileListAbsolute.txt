@@ -1,0 +1,8 @@
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Debug\ArkData.dll
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Debug\ArkData.pdb
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Debug\SSQLib.dll
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Debug\ArkData.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Debug\ArkData.dll
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Debug\ArkData.pdb

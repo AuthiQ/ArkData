@@ -1,0 +1,7 @@
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Release\ArkData.dll
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Release\ArkData.pdb
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Release\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Release\SSQLib.dll
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Release\Newtonsoft.Json.xml
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Release\ArkData.dll
+C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Release\ArkData.pdb
