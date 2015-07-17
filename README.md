@@ -50,7 +50,7 @@ await container.LoadSteamAsync("API Key");
 txtSteamName.text = container.Players[0].SteamName;
 txtProfileURL.text = container.Players[0].ProfileUrl;
 
-await LoadOnlinePlayersAsync("127.0.0.1", 7777);
+await container.LoadOnlinePlayersAsync("127.0.0.1", 7777);
 
 txtOnline.text = container.Players[0].Online;
 ```
