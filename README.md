@@ -56,4 +56,4 @@ txtOnline.text = container.Players[0].Online;
 ```
 <h3>Cross-platform compatibility</h3>
 
-The sources of all the dependencies are available and no unsupported features are used in the development of ArkData it can be compiled with <a href="http://www.mono-project.com/docs/about-mono/languages/csharp/">Mono</a>. You might have to change a line or two to compansate for environmental differences. The core mechanics should work under Linux and Mac OS X.
+The sources of all the dependencies are available and no unsupported features are used in the development of ArkData it can be compiled with <a href="http://www.mono-project.com/docs/about-mono/languages/csharp/">Mono</a>. You might have to change a line or two to compensate for environmental differences. The core mechanics should work under Linux and Mac OS X.
