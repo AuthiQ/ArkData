@@ -6,3 +6,10 @@ C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\bin\Release\Newtonsoft.Json.
 C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Release\ArkData.dll
 C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Release\ArkData.pdb
 C:\Users\Admin\Documents\Git\Spotty\ArkData\ArkData\obj\Release\ArkData.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Git\ArkData\ArkData\bin\Release\ArkData.dll
+C:\Users\Admin\Documents\Git\ArkData\ArkData\bin\Release\ArkData.pdb
+C:\Users\Admin\Documents\Git\ArkData\ArkData\bin\Release\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\Git\ArkData\ArkData\bin\Release\Newtonsoft.Json.xml
+C:\Users\Admin\Documents\Git\ArkData\ArkData\obj\Release\ArkData.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Git\ArkData\ArkData\obj\Release\ArkData.dll
+C:\Users\Admin\Documents\Git\ArkData\ArkData\obj\Release\ArkData.pdb
