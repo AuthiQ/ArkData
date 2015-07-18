@@ -1,6 +1,4 @@
-# ArkData - ARK Dedicated Server data reader
-
-
+#![Logo](http://web.mxcontent.network/arkdata/ArkData.png) ARK Server Data Reader#
 
 The core mechanics are based on <a href="http://steamcommunity.com/app/346110/discussions/0/594821545173979380/">Player & Tribe Viewer</a> made by <a href="http://steamcommunity.com/id/cssjunky">[xU] .$pIrit</a>
 we wanted to make the mechanics more easily implementable into other components.
@@ -27,10 +25,10 @@ txtSteamName.text = container.Players[0].SteamName;
 txtProfileURL.text = container.Players[0].ProfileUrl;
 ```
 
-Last but not least we have the functionality to check who of the players is online. To use this function you need to have load the users Steam data. This is necessary to bind the online users to their server profiles.
+Last but not least we have the functionality to check who of the players is online. To use this function you need to have loaded the users Steam data. This is necessary to bind the online users to their server profiles.
 
 ```C#
-container.LoadOnlinePlayers("127.0.0.1", 7777);
+container.LoadOnlinePlayers("127.0.0.1", 27015);
 
 txtOnline.text = container.Players[0].Online;
 ```
@@ -50,7 +48,15 @@ await container.LoadSteamAsync("API Key");
 txtSteamName.text = container.Players[0].SteamName;
 txtProfileURL.text = container.Players[0].ProfileUrl;
 
-await container.LoadOnlinePlayersAsync("127.0.0.1", 7777);
+await container.LoadOnlinePlayersAsync("127.0.0.1", 27015);
 
 txtOnline.text = container.Players[0].Online;
 ```
+<h3>Cross-platform compatibility</h3>
+
+The sources of all the dependencies are available and no unsupported features are used in the development of ArkData it can be compiled with <a href="http://www.mono-project.com/docs/about-mono/languages/csharp/">Mono</a>. You might have to change a line or two to compensate for environmental differences. The core mechanics should work under Linux and Mac OS X, although this is untested.
+
+<h3>Third-party Sources</h3>
+
+- <a href="https://github.com/JamesNK/Newtonsoft.Json">NewtonSoft.Json</a>
+- <a href="https://code.google.com/p/ssqlib/">SSQ Lib</a>
