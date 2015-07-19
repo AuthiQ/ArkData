@@ -39,21 +39,7 @@ namespace ArkData
         {
             return Task.Run<Tribe>(() =>
             {
-                FileInfo fileInfo = new FileInfo(fileName);
-                if (!fileInfo.Exists)
-                    return null;
-
-                byte[] data = File.ReadAllBytes(fileName);
-
-                return new Tribe()
-                {
-                    Id = Helpers.GetInt(data, "TribeID"),
-                    Name = Helpers.GetString(data, "TribeName"),
-                    OwnerId = (int?)GetOwnerId(data),
-
-                    FileCreated = fileInfo.CreationTime,
-                    FileUpdated = fileInfo.LastWriteTime
-                };
+                return ParseTribe(fileName);
             });
         }
     }

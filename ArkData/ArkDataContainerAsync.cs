@@ -5,11 +5,12 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using SSQLib;
-using System.Net;
 
 namespace ArkData
 {
+    /// <summary>
+    /// The container for the ARK data.
+    /// </summary>
     public partial class ArkDataContainer
     {
         /// <summary>
@@ -32,15 +33,7 @@ namespace ArkData
                 if (response.IsSuccessStatusCode)
                     using (var reader = new StreamReader(await response.Content.ReadAsStreamAsync()))
                     {
-                        var profiles = JsonConvert.DeserializeObject<Models.SteamResponse<Models.SteamProfile>>(reader.ReadToEnd()).response.players;
-
-                        for (var i = 0; i < profiles.Count; i++)
-                        {
-                            var player = Players.Single(p => p.SteamId == profiles[i].steamid);
-                            player.SteamName = profiles[i].personaname;
-                            player.ProfileUrl = profiles[i].profileurl;
-                            player.AvatarUrl = profiles[i].avatar;
-                        }
+                        LinkSteamProfiles(await reader.ReadToEndAsync());
                     }
                 else
                     throw new System.Net.WebException("The Steam API request was unsuccessful. Are you using a valid key?");
@@ -49,16 +42,7 @@ namespace ArkData
                 if (response.IsSuccessStatusCode)
                     using (var reader = new StreamReader(await response.Content.ReadAsStreamAsync()))
                     {
-                        var bans = JsonConvert.DeserializeObject<Models.SteamPlayerResponse<Models.SteamBan>>(reader.ReadToEnd()).players;
-                        for (var i = 0; i < bans.Count; i++)
-                        {
-                            var player = Players.Single(p => p.SteamId == bans[i].SteamId);
-                            player.CommunityBanned = bans[i].CommunityBanned;
-                            player.VACBanned = bans[i].VACBanned;
-                            player.NumberOfVACBans = bans[i].NumberOfVACBans;
-                            player.NumberOfGameBans = bans[i].NumberOfGameBans;
-                            player.DaysSinceLastBan = bans[i].DaysSinceLastBan;
-                        }
+                        LinkSteamBans(await reader.ReadToEndAsync());
                     }
                 else
                     throw new System.Net.WebException("The Steam API request was unsuccessful. Are you using a valid key?");
@@ -77,15 +61,7 @@ namespace ArkData
             if (SteamLoaded)
                 return Task.Run(() =>
                 {
-                    var online = Enumerable.OfType<PlayerInfo>(new SSQL().Players(new IPEndPoint(IPAddress.Parse(ipString), port))).ToList();
-
-                    if (online.Count > 0)
-                        for (var i = 0; i < online.Count; i++)
-                        {
-                            var online_player = Players.SingleOrDefault(p => p.SteamName == online[i].Name);
-                            if (online_player != null)
-                                online_player.Online = true;
-                        }
+                    LinkOnlinePlayers(ipString, port);
                 });
             else
                 throw new System.Exception("The Steam user data should be loaded before the server status can be checked.");
@@ -115,19 +91,7 @@ namespace ArkData
             for (var i = 0; i < tribeFiles.Length; i++)
                 container.Tribes.Add(await Parser.ParseTribeAsync(tribeFiles[i]));
 
-            for (var i = 0; i < container.Players.Count; i++)
-            {
-                var player = container.Players[i];
-                player.OwnedTribes = container.Tribes.Where(t => t.OwnerId == player.Id).ToList();
-                player.Tribe = container.Tribes.SingleOrDefault(t => t.Id == player.TribeId);
-            }
-
-            for (var i = 0; i < container.Tribes.Count; i++)
-            {
-                var tribe = container.Tribes[i];
-                tribe.Owner = container.Players.SingleOrDefault(p => p.Id == tribe.OwnerId);
-                tribe.Players = container.Players.Where(p => p.TribeId == tribe.Id).ToList();
-            }
+            container.LinkPlayerTribe();
 
             return container;
         }

@@ -52,23 +52,7 @@ namespace ArkData
         {
             return Task.Run<Player>(() =>
             {
-                FileInfo fileInfo = new FileInfo(fileName);
-                if (!fileInfo.Exists)
-                    return null;
-                byte[] data = File.ReadAllBytes(fileName);
-
-                return new Player()
-                {
-                    Id = Convert.ToInt64(GetId(data)),
-                    SteamId = GetSteamId(data),
-                    SteamName = Helpers.GetString(data, "PlayerName"),
-                    CharacterName = Helpers.GetString(data, "PlayerCharacterName"),
-                    TribeId = Helpers.GetInt(data, "TribeID"),
-                    Level = Convert.ToInt16(Helpers.GetUInt16(data, "CharacterStatusComponent_ExtraCharacterLevel")),
-
-                    FileCreated = fileInfo.CreationTime,
-                    FileUpdated = fileInfo.LastWriteTime
-                };
+                return ParsePlayer(fileName);
             });
         }
     }
