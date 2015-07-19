@@ -63,18 +63,18 @@
     <Compile Include="PlayerParser.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SSQLib\Packet.cs" />
+    <Compile Include="SSQLib\PlayerInfo.cs" />
+    <Compile Include="SSQLib\ServerInfo.cs" />
+    <Compile Include="SSQLib\SocketUtils.cs" />
+    <Compile Include="SSQLib\SSQL.cs" />
+    <Compile Include="SSQLib\SSQLServerException.cs" />
     <Compile Include="Tribe.cs" />
     <Compile Include="TribeParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArkDataKey.pfx" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SSQLib\SSQLib.csproj">
-      <Project>{3f273b18-3c15-420b-bd8f-ded3e4e52996}</Project>
-      <Name>SSQLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
