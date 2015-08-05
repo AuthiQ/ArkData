@@ -3,6 +3,7 @@ using System.Net;
 using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Runtime.Remoting;
 
 /// <summary>
 /// The container for the ARK data.
@@ -41,15 +42,23 @@ namespace ArkData
         /// <param name="port">The Steam query port.</param>
         private void LinkOnlinePlayers(string ipString, int port)
         {
-            var online = Enumerable.OfType<PlayerInfo>(new SSQL().Players(new IPEndPoint(IPAddress.Parse(ipString), port))).ToList();
+            try
+            {
+                var online = Enumerable.OfType<PlayerInfo>(new SSQL().Players(new IPEndPoint(IPAddress.Parse(ipString), port))).ToList();
 
-            if (online.Count > 0)
-                for (var i = 0; i < online.Count; i++)
+                for (var i = 0; i < Players.Count; i++)
                 {
-                    var online_player = Players.SingleOrDefault(p => p.SteamName == online[i].Name);
+                    var online_player = online.SingleOrDefault(p => p.Name == Players[i].SteamName);
                     if (online_player != null)
-                        online_player.Online = true;
+                        Players[i].Online = true;
+                    else
+                        Players[i].Online = false;
                 }
+            }
+            catch (SSQLServerException ex)
+            {
+                throw new ServerException("The connection to the ARK server failed. Please check the configured IP address and port.", ex);
+            }
         }
 
         /// <summary>
