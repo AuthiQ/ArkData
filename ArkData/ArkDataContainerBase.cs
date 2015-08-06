@@ -43,12 +43,13 @@ namespace ArkData
         {
             var online = Enumerable.OfType<PlayerInfo>(new SSQL().Players(new IPEndPoint(IPAddress.Parse(ipString), port))).ToList();
 
-            if (online.Count > 0)
-                for (var i = 0; i < online.Count; i++)
+            for (var i = 0; i < Players.Count; i++)
                 {
-                    var online_player = Players.SingleOrDefault(p => p.SteamName == online[i].Name);
+                    var online_player = online.SingleOrDefault(p => p.Name == Players[i].SteamName);
                     if (online_player != null)
-                        online_player.Online = true;
+                        Players[i].Online = true;
+                    else
+                        Players[i].Online = false;
                 }
         }
 
