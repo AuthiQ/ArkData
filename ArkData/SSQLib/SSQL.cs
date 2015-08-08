@@ -282,7 +282,7 @@ namespace SSQLib
                 i++;
 
                 // Decode the player name
-                newPlayer.Name = Encoding.Unicode.GetString(playerName.ToArray());
+                newPlayer.Name = Encoding.UTF8.GetString(playerName.ToArray());
 
                 //Get the kills and store them in the player info
                 newPlayer.Kills = (int)(buf[i] & 255) | ((buf[i + 1] & 255) << 8) | ((buf[i + 2] & 255) << 16) | ((buf[i + 3] & 255) << 24);
