@@ -54,10 +54,9 @@ namespace ArkData
                     else
                         Players[i].Online = false;
                 }
-            }
-            catch (SSQLServerException ex)
+            } catch(SSQLServerException ex)
             {
-                throw new ServerException("The connection to the ARK server failed. Please check the configured IP address and port.", ex);
+                throw new ServerException("The connection to the ARK server failed. Please check the configured IP address and port.");
             }
         }
 
