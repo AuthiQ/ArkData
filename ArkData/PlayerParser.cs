@@ -41,7 +41,7 @@ namespace ArkData
                 SteamName = Helpers.GetString(data, "PlayerName"),
                 CharacterName = Helpers.GetString(data, "PlayerCharacterName"),
                 TribeId = Helpers.GetInt(data, "TribeID"),
-                Level = Convert.ToInt16(Helpers.GetUInt16(data, "CharacterStatusComponent_ExtraCharacterLevel")),
+                Level = (short)(1 + Convert.ToInt32(Helpers.GetUInt16(data, "CharacterStatusComponent_ExtraCharacterLevel"))),
 
                 FileCreated = fileInfo.CreationTime,
                 FileUpdated = fileInfo.LastWriteTime
