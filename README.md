@@ -3,6 +3,8 @@
 The core mechanics are based on <a href="http://steamcommunity.com/app/346110/discussions/0/594821545173979380/">Player & Tribe Viewer</a> made by <a href="http://steamcommunity.com/id/cssjunky">[xU] .$pIrit</a>
 we wanted to make the mechanics more easily implementable into other components.
 
+<h4>NOTE: This implementation is deprecated and most likely won't work with your version of the server.</h4>
+
 <h3>How to use it</h3>
 
 ArkData is very easy to use:
